@@ -1,0 +1,68 @@
+#! /bin/sh
+
+##############################################
+# _                                          
+#| |__  ___ _ ____      ___ __ ___  _ __ ___ 
+#| '_ \/ __| '_ \ \ /\ / / '_ ` _ \| '__/ __|
+#| |_) \__ \ |_) \ V  V /| | | | | | | | (__ 
+#|_.__/|___/ .__/ \_/\_/ |_| |_| |_|_|  \___|
+#          |_|                               
+##############################################
+
+sxhkd &
+picom -b &
+wal -R
+
+
+#bspc monitor -d 1 2 3 4 5 6 7 8 9 UwU
+bspc monitor -d 一 二 三 四 五 六 七 八 
+
+bspc config border_width        2
+bspc config window_gap          12
+
+bspc config split_ratio          0.52
+bspc config borderless_monocle   true
+bspc config gapless_monocle      true
+bspc config top_padding           22
+
+#open in desktop
+bspc rule -a Gimp desktop='^8' state=floating follow=on
+bspc rule -a Chromium desktop='^2' border=off
+bspc rule -a discord desktop='^3'
+bspc rule -a "Spotify" desktop='^3'
+bspc rule -a spotify desktop='^3'
+bspc rule -a "VirtualBox Manager" desktop='^8'
+
+#other rules
+bspc rule -a mplayer2 state=floating
+bspc rule -a Screenkey manage=off
+bspc rule -a telegram-desktop state=floating border=off
+bspc rule -a TelegramDesktop state=floating border=off
+bspc rule -a whatsapp-nativefier-d52542 state=floating border=off
+bspc rule -a Pamac-manager state=floating border=off
+bspc rule -a matplotlib state=floating
+
+#plasma config
+bspc rule -a krunner state=floating border=off layer=above
+bspc rule -a yakuake state=floating border=off
+bspc rule -a plasmashell state=floating border=off layer=normal
+bspc rule -a Plasma state=floating manage=off layer=above
+
+#auto colors
+# source the colors.
+. "${HOME}/.cache/wal/colors.sh"
+
+# Set the border colors.
+bspc config normal_border_color "$color1"
+bspc config active_border_color "$color2"
+bspc config focused_border_color "$color15"
+# Use the line below if you are on bspwm >= 0.9.4
+bspc config presel_feedback_color "$color1"
+# Use the line below if you are on bspwm < 0.9.4
+#bspc config presel_border_color "$color1"
+
+#make desktop ^8 all floating
+~/.config/bspwm/scripts/floating.sh 
+
+#compositor
+#picom -b  
