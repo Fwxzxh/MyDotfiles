@@ -11,6 +11,7 @@
 
 sxhkd &
 picom -b &
+flashfocus &
 wal -R &  
 . "${HOME}/.cache/wal/colors.sh"
 
@@ -28,9 +29,9 @@ bspc config top_padding           22
 #open in desktop
 bspc rule -a Gimp desktop='^8' state=floating follow=on
 bspc rule -a Chromium desktop='^2' border=off
-bspc rule -a discord desktop='^3'
-bspc rule -a "Spotify" desktop='^3'
-bspc rule -a spotify desktop='^3'
+bspc rule -a discord desktop='^9'
+bspc rule -a "Spotify" desktop='^9'
+bspc rule -a spotify desktop='^9'
 bspc rule -a "VirtualBox Manager" desktop='^8'
 
 #other rules
