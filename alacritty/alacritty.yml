@@ -33,9 +33,9 @@ window:
   #
   # Blank space added around the window in pixels. This padding is scaled
   # by DPI and the specified value is always added at both opposing sides.
-  #padding:
-  #  x: 0
-  #  y: 0
+  padding:
+    x: 1
+    y: 0
 
   # Spread additional padding evenly around the terminal content.
   dynamic_padding: true
@@ -142,14 +142,14 @@ font:
   # as modifying the line spacing, and `offset.x` as modifying the letter spacing.
   offset:
     x: 0
-    y: -1
+    y: 0
 
   # Glyph offset determines the locations of the glyphs within their cells with
   # the default being at the bottom. Increasing `x` moves the glyph to the right,
   # increasing `y` moves the glyph upwards.
-  #glyp_offset:
-  #  x: 0
-  #  y: 0
+  glyp_offset:
+    x: 0
+    y: -2
 
   # Thin stroke font rendering (macOS only)
   #
@@ -168,7 +168,7 @@ font:
   #use_thin_strokes: true
 
 # If `true`, bold text is drawn using the bright color variants.
-#draw_bold_text_with_bright_colors: false
+draw_bold_text_with_bright_colors: true
 
 # Colors (Tomorrow Night Bright)
 #colors:
@@ -255,6 +255,42 @@ font:
   #   `- { index: 16, color: '#ff00ff' }`
   #
   #indexed_colors: []
+#--------------------------------
+# Colors (tempus-future) 
+colors:
+   # Default colors
+   primary:
+     background: '0x2E3440'
+     foreground: '0xD8DEE9'
+
+   # Cursor colors if custom_cursor_colors is true
+   cursor:
+    text: '0x2E3440'
+    cursor: '0xD8DEE9'
+
+   # Normal colors
+   normal:
+     black:   '0x3B4252'
+     red:     '0xBF616A'
+     green:   '0xA3BE8C'
+     yellow:  '0xEBCB8B'
+     blue:    '0x81A1C1'
+     magenta: '0xB48EAD'
+     cyan:    '0x88C0D0'
+     white:   '0xE5E9F0'
+
+   # Bright colors
+   bright:
+     black:   '0x4C566A'
+     red:     '0xBF616A'
+     green:   '0xA3BE8C'
+     yellow:  '0xEBCB8B'
+     blue:    '0x81A1C1'
+     magenta: '0xB48EAD'
+     cyan:    '0x8FBCBB'
+     white:   '0xECEFF4'
+#--------------------------------
+
 
 # Visual Bell
 #
@@ -286,7 +322,7 @@ font:
 #
 # Window opacity as a floating point number from `0.0` to `1.0`.
 # The value `0.0` is completely transparent and `1.0` is opaque.
-background_opacity: 0.92
+background_opacity: 0.85
 
 #selection:
   #semantic_escape_chars: ",│`|:\"' ()[]{}<>\t"
@@ -305,6 +341,7 @@ cursor:
   #   - _ Underline
   #   - | Beam
   style: Underline
+  custom_cursor_colors: true
 
   # Vi mode cursor style
   #

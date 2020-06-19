@@ -12,23 +12,25 @@
 sxhkd &
 picom -b &
 flashfocus &
-wal -R &  
+#wal -R &  
 . "${HOME}/.cache/wal/colors.sh"
+wmname LG3D
+
 
 #bspc monitor -d 1 2 3 4 5 6 7 8 9 UwU
 bspc monitor -d 一 二 三 四 五 六 七 八 九 十 
 
-bspc config border_width        2
-bspc config window_gap          12
+bspc config border_width        0
+bspc config window_gap          11
 
-bspc config split_ratio          0.52
+bspc config split_ratio          0.50
 bspc config borderless_monocle   true
 bspc config gapless_monocle      true
-bspc config top_padding           22
+#bspc config top_padding           22
 
 #open in desktop
 bspc rule -a Gimp desktop='^8' state=floating follow=on
-bspc rule -a Chromium desktop='^2' border=off
+#bspc rule -a Chromium desktop='^2' border=off
 bspc rule -a discord desktop='^9'
 bspc rule -a "Spotify" desktop='^9'
 bspc rule -a spotify desktop='^9'
@@ -42,24 +44,26 @@ bspc rule -a TelegramDesktop state=floating border=off
 bspc rule -a whatsapp-nativefier-d52542 state=floating border=off
 bspc rule -a Pamac-manager state=floating border=off
 bspc rule -a matplotlib state=floating
+bspc rule -a lotion-binary state=floating
+bspc rule -a gnuplot_qt state=floating border=off  
+bspc rule -a zathura state=tiled
 
 #plasma config
 bspc rule -a krunner state=floating border=off layer=above
 bspc rule -a yakuake state=floating border=off layer=above
 bspc rule -a plasmashell state=floating border=off layer=normal
 bspc rule -a Plasma state=floating manage=off layer=above
-bspc rule -a latte-dock state=floating border=off 
+bspc rule -a latte-dock state=floating border=off layer=normal 
 bspc rule -a lattedock state=floating border=off 
+bspc rule -a plasmashell state=floating
 
 #scrips
 #make all descktop ^8 all floating 
 ~/.config/bspwm/scripts/floating.sh
 
 #auto colors
-# Set the border colors.
 bspc config normal_border_color "$color1"
-bspc config active_border_color "$color2"
+bspc config active_border_color '#c2c8d4'
 bspc config focused_border_color "$color15"
 # Use the line below if you are on bspwm >= 0.9.4
 bspc config presel_feedback_color "$color1"
-
